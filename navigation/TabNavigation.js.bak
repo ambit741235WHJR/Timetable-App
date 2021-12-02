@@ -1,0 +1,47 @@
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import Ionicons from 'react-native-vector-icons/Ionicons';
+//import Feed from "../screens/Feed";
+import TimetableScreen from "../screens/TimetableScreen";
+import CreateTimetable from "../screens/CreateTimetable";
+
+const Tab = createMaterialBottomTabNavigator();
+
+const BottomTabNavigator = () => {
+  return (
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            if (route.name === 'TimetableScreen') {
+              iconName = focused
+                ? 'book'
+                : 'book-outline';
+            } else if (route.name === 'CreateTimetable') {
+              iconName = focused ? 'create' : 'create-outline';
+            }
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          "tabBarActiveTintColor": "tomato",
+          "tabBarInactiveTintColor": "gray",
+          "tabBarStyle": [
+            {
+              "display": "flex"
+            },
+            null
+          ]
+        })}
+        /*tabBarOptions={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
+        }}*/
+      >
+        <Tab.Screen name="TimetableScreen" component={TimetableScreen} />
+        <Tab.Screen name="CreateTimetable" component={CreateTimetable} />
+      </Tab.Navigator>
+  );
+}
+
+export default BottomTabNavigator;
