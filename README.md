@@ -22,12 +22,15 @@ git clone https://github.com/johndoe/Timetable-App
 3. Navigate to the folder where you have downloaded the Source Code.
 
 If you do not have Git installed:-
+<br>
 2. Download the code from Code/Download ZIP.
+<br>
 3. Extract and navigate to the folder where you have downloaded the Source Code.
 
 Next Steps:-
+<br>
 4. Run the following command before working on this Repo (Any one)
-    INFO: If you have yarn installed, I would recommend using the 2nd Command otherwise you can go for 1st command if you have installed npm. NPM and node.js is required to run and check.
+    <br>INFO: If you have yarn installed, I would recommend using the 2nd Command otherwise you can go for 1st command if you have installed npm. NPM and node.js is required to run and check.
 ```
 npm install
 yarn add
@@ -42,6 +45,7 @@ npm install -g expo-cli
 
 After Modifying:-
 If you have downloaded using Git:-
+<br>
 8. Commit the changes using this command:-
 ```
 git add .
@@ -56,13 +60,20 @@ git commit -m "First Commit"
 ```
 
 If you have downloaded using Github.com
+<br>
 8. Navigate to your repository. It should look something like this:-
         "<username>/Timetable-App"
+<br>
 9. Click on Add file -> Upload Files
+<br>
 10. Drag and Drop your Files and Folders on **Drag files here to add them to your repository**
+<br>
 11. Add a Commit Message (Required)
+<br>
 12. Select the **Create a new branch for this commit and start a pull request** Radio Button and write "pushCommit" on the text box.
+<br>
 13. Click on Commit Changes.
+<br>
 
 14. Start a Pull Request on our Repository. [Github Repository](https://github.com/ambit741235/Timetable-App)
 15. Wait untill we review your code. If your code we feel is good, then we will make you a Contributor and will re-release our App using your Code.
