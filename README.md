@@ -9,9 +9,8 @@ Welcome to the Github Page of Timetale App. Here, you will find the Source Code,
 ## **How to work on this App:-**
 
 1. Fork this repository
-
 If you have installed Git on your PC/Laptop:-
-2. a) Use the following command to download the Source Code on your Laptop/PC:
+2. Use the following command to download the Source Code on your Laptop/PC:
 ```
 git clone https://github.com/<username>/Timetable-App
 ```
@@ -20,30 +19,30 @@ git clone https://github.com/<username>/Timetable-App
 ```
 git clone https://github.com/johndoe/Timetable-App
 ```
-   b) Navigate to the folder where you have downloaded the Source Code.
+3. Navigate to the folder where you have downloaded the Source Code.
 
 If you do not have Git installed:-
-2. a) Download the code from Code/Download ZIP.
-   b) Extract and navigate to the folder where you have downloaded the Source Code.
+2. Download the code from Code/Download ZIP.
+3. Extract and navigate to the folder where you have downloaded the Source Code.
 
 Next Steps:-
-3. Run the following command before working on this Repo (Any one)
+4. Run the following command before working on this Repo (Any one)
     INFO: If you have yarn installed, I would recommend using the 2nd Command otherwise you can go for 1st command if you have installed npm. NPM and node.js is required to run and check.
 ```
 npm install
 yarn add
 ```
-4. If you haven't installed expo-cli, install using this command:-
+5. If you haven't installed expo-cli, install using this command:-
 ```
 npm install -g expo-cli
 ```
-5. Open the Folder on any Code Editor (I recommend using VS Code).
-6. Run and test on your Mobile using this command: expo start
+6. Open the Folder on any Code Editor (I recommend using VS Code).
+7. Run and test on your Mobile using this command: expo start
     INFO: You need to be on the same network on mobile as it is on your PC/Laptop.
 
 After Modifying:-
 If you have downloaded using Git:-
-7. Commit the changes using this command:-
+8. Commit the changes using this command:-
 ```
 git add .
 git commit -m <commitmessage>
@@ -57,20 +56,21 @@ git commit -m "First Commit"
 ```
 
 If you have downloaded using Github.com
-7. a) Navigate to your repository. It should look something like this:-
+8. Navigate to your repository. It should look something like this:-
         "<username>/Timetable-App"
-   b) Click on Add file -> Upload Files
-   c) Drag and Drop your Files and Folders on **Drag files here to add them to your repository**
-   d) Add a Commit Message (Required)
-   e) Select the **Create a new branch for this commit and start a pull request** Radio Button and write "pushCommit" on the text box.
-   f) Click on Commit Changes.
-8. Start a Pull Request on our Repository. [Github Repository](https://github.com/ambit741235/Timetable-App)
-9. Wait untill we review your code. If your code we feel is good, then we will make you a Contributor and will re-release our App using your Code.
+9. Click on Add file -> Upload Files
+10. Drag and Drop your Files and Folders on **Drag files here to add them to your repository**
+11. Add a Commit Message (Required)
+12. Select the **Create a new branch for this commit and start a pull request** Radio Button and write "pushCommit" on the text box.
+13. Click on Commit Changes.
+
+14. Start a Pull Request on our Repository. [Github Repository](https://github.com/ambit741235/Timetable-App)
+15. Wait untill we review your code. If your code we feel is good, then we will make you a Contributor and will re-release our App using your Code.
 
 ## **Current Development Status:-**
 
 1. [23-05-2021: 1st Phase of Development (Starting of this App)](https://github.com/ambit741235/Timetable-App/tree/d5f2e1434730ea38f59920e7ffa12699f50216cc)
-2. [01-06-2021: 2nd Phase of Development (More inclusion)](https://github.com/ambit741235/Timetable-App)
+2. [01-06-2021: 2nd Phase of Development (More inclusion)](https://github.com/ambit741235/Timetable-App/tree/f6a379c7077643596c70fc3696853f6038965e0b)
 
 ## Changes:-
 1. Starting of this App.
