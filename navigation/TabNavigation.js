@@ -4,8 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import TimetableScreen from "../screens/TimetableScreen";
 import CreateTimetable from "../screens/CreateTimetable";
+import Feed from "../screens/Feed";
 import { RFValue } from 'react-native-responsive-fontsize';
 import firebase from 'firebase';
 
@@ -21,7 +21,7 @@ export default class BottomTabNavigator extends Component {
   }
   
   renderFeed = props => {
-    return <TimetableScreen setUpdateToFalse = {this.removeUpdated}{...props}/>
+    return <Feed setUpdateToFalse = {this.removeUpdated}{...props}/>
   }
 
   renderPost = props => {
@@ -56,7 +56,7 @@ export default class BottomTabNavigator extends Component {
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-            if (route.name === 'TimetableScreen') {
+            if (route.name === 'Feed') {
               iconName = focused
                 ? 'home'
                 : 'home-outline';
@@ -82,7 +82,7 @@ export default class BottomTabNavigator extends Component {
           inactiveTintColor: 'gray',
         }}*/
       >
-        <Tab.Screen name="TimetableScreen" component={this.renderFeed} options={{unmountOnBlur: true}} />
+        <Tab.Screen name="Feed" component={this.renderFeed} options={{unmountOnBlur: true}} />
         <Tab.Screen name="CreateTimetable" component={this.renderPost} options={{unmountOnBlur: true}} />
       </Tab.Navigator>
     );

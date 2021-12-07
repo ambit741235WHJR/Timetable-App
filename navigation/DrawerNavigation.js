@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import firebase from 'firebase';
 
-import BottomTabNavigator from './TabNavigation';
+import StackNavigator from './StackNavigator';
 import Profile from '../screens/Profile';
 import Logout from '../screens/Logout';
 import CustomSidebarMenu from '../screens/CustomSidebarMenu';
@@ -32,7 +32,7 @@ export default class DrawerNavigator extends React.Component {
                 drawerItemStyle: { marginVertical: 5 },
                 headerShown: false
             }} drawerContent = {props => <CustomSidebarMenu {...props}/>}>
-                <Drawer.Screen name="Home" component={BottomTabNavigator} options={{unmountOnBlur: true}}/>
+                <Drawer.Screen name="Home" component={StackNavigator} options={{unmountOnBlur: true}}/>
                 <Drawer.Screen name="Profile" component={Profile} options={{unmountOnBlur: true}}/>
                 <Drawer.Screen name="Logout" component={Logout} options={{unmountOnBlur: true}} />
             </Drawer.Navigator>
