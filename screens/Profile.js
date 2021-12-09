@@ -42,11 +42,6 @@ export default class Profile extends Component {
         name = `${snapshot.val().first_name} ${snapshot.val().last_name}`;
         image = snapshot.val().profile_picture;
     });
-    /*await firebase.database().ref('/users/' + firebase.auth().currentUser.uid).on('value', function (snapshot) {
-        theme = snapshot.val().current_theme;
-        name = `${snapshot.val().first_name} ${snapshot.val().last_name}`;
-        image = snapshot.val().profile_picture;
-    });*/
     this.setState({
       light_theme: theme === 'light' ? true : false,
       isEnabled: theme === 'light' ? false : true,

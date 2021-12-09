@@ -1,10 +1,10 @@
-[![Changes](https://img.shields.io/badge/Commits-3-brightgreen)](https://github.com/ambit741235/Shooting-Asteroids-Game#changes-)
-[![Development Status](https://img.shields.io/badge/Development%20Status-In%20Beta-informational)](https://github.com/ambit741235/Shooting-Asteroids-Game#current-development-status-)
+[![Changes](https://img.shields.io/badge/Commits-5-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
+[![Development Status](https://img.shields.io/badge/Development%20Status-Complete-brightgreen)](https://github.com/ambit741235/Timetable-App#current-development-status-)
 
 # Timetable App
 Welcome to the Github Page of Timetale App. Here, you will find the Source Code, Current Development Status and Changes of this App.
 
-**Information: APKs aren't available till now. We will be changing this Readme once we will be releasing the APKs as this is still in beta right now. If you want to work on our Source Code, please follow the below instructions on How to work on this App.**
+**Information: APKs aren't available till now. We will be changing this Readme once we will be releasing the APKs as the APKs will be ready in 2-3 days. If you want to work on our Source Code, please follow the below instructions on How to work on this App.**
 
 ## **How to work on this App:-**
 
@@ -80,11 +80,23 @@ If you have downloaded using Github.com
 
 ## **Current Development Status:-**
 
-1. [23-05-2021: 1st Phase of Development (Starting of this App)](https://github.com/ambit741235/Timetable-App/tree/d5f2e1434730ea38f59920e7ffa12699f50216cc)
-2. [01-06-2021: 2nd Phase of Development (More inclusion)](https://github.com/ambit741235/Timetable-App/tree/f6a379c7077643596c70fc3696853f6038965e0b)
+1. [02-12-2021: 1st Phase of Development (Starting of this App)](https://github.com/ambit741235/Timetable-App/tree/d5f2e1434730ea38f59920e7ffa12699f50216cc)
+2. [07-12-2021: 2nd Phase of Development (More inclusion)](https://github.com/ambit741235/Timetable-App/tree/f6a379c7077643596c70fc3696853f6038965e0b)
+3. [07-12-2021: Final Phase of Development (Changes included below)](https://github.com/ambit741235/Timetable-App/tree/f6a379c7077643596c70fc3696853f6038965e0b)
 
 ## Changes:-
 1. Starting of this App.
 2. More inclusion in this App.
+3. Final Touches, Removing Messiness, Fixing Bugs, Added a new Loading Animation, more information below.
+
+## New Loading Animation:-
+Starting Today, we have added a new Loading Animation in our Loading Screen as shown below
+![Loading](assets/loading.gif)
+This will be shown to users before they will login to our App. This feature is marked as Stable, though if you want to work on this Feature for increased Stability, please follow the instructions on [How to work on this App](https://github.com/ambit741235/Timetable-App#how-to-work-on-this-app-)
+Thank You for having much patience for a great, stable and stylish release of this App.
+You can feel free to create a new Issue if you want any changes/if there is a bug/if any features are missing.
+And, once again, Thank You and Have a nice day:)
+
+APKs will be available after 2-3 days.
 
 **If any changes required, you can feel free to create a new issue in Issues/New Issue in Github**

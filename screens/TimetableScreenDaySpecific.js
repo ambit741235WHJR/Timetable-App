@@ -7,12 +7,10 @@ import {
     Platform,
     StatusBar,
     Image,
-    ScrollView,
-    TouchableOpacity
+    ScrollView
 } from "react-native";
 
-import Ionicons from "react-native-vector-icons/Ionicons";
-import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import { RFValue } from "react-native-responsive-fontsize";
 
 import firebase from "firebase";
 
@@ -20,12 +18,13 @@ export default class TimetableScreenDaySpecific extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            light_theme: true,
+            light_theme: true
         };
     }
 
     componentDidMount() {
         this.fetchUser();
+        this.setup();
     }
 
     fetchUser = () => {
@@ -37,6 +36,88 @@ export default class TimetableScreenDaySpecific extends Component {
                 theme = snapshot.val().current_theme
                 this.setState({ light_theme: theme === "light" })
             })
+    }
+
+    setup = () => {
+        if(this.props.route.params.timetable.first_period === ''){
+            this.setState({
+                first_period: 'X'
+            });
+        }else{
+            this.setState({
+                first_period: this.props.route.params.timetable.first_period
+            });
+        }
+
+        if(this.props.route.params.timetable.second_period === ''){
+            this.setState({
+                second_period: 'X'
+            });
+        }else if(this.props.route.params.timetable.second_period){
+            this.setState({
+                second_period: this.props.route.params.timetable.second_period
+            });
+        }
+
+        if(this.props.route.params.timetable.third_period === ''){
+            this.setState({
+                third_period: 'X'
+            });
+        }else{
+            this.setState({
+                third_period: this.props.route.params.timetable.third_period
+            });
+        }
+
+        if(this.props.route.params.timetable.fourth_period === ''){
+            this.setState({
+                fourth_period: 'X'
+            });
+        }else{
+            this.setState({
+                fourth_period: this.props.route.params.timetable.fourth_period
+            });
+        }
+
+        if(this.props.route.params.timetable.fifth_period === ''){
+            this.setState({
+                fifth_period: 'X'
+            });
+        }else{
+            this.setState({
+                fifth_period: this.props.route.params.timetable.fifth_period
+            });
+        }
+
+        if(this.props.route.params.timetable.sixth_period === ''){
+            this.setState({
+                sixth_period: 'X'
+            });
+        }else{
+            this.setState({
+                sixth_period: this.props.route.params.timetable.sixth_period
+            });
+        }
+
+        if(this.props.route.params.timetable.seventh_period === ''){
+            this.setState({
+                seventh_period: 'X'
+            });
+        }else{
+            this.setState({
+                seventh_period: this.props.route.params.timetable.seventh_period
+            });
+        }
+
+        if(this.props.route.params.timetable.eighth_period === ''){
+            this.setState({
+                eighth_period: 'X'
+            });
+        }else{
+            this.setState({
+                eighth_period: this.props.route.params.timetable.eighth_period
+            });
+        }
     }
 
     render() {
@@ -57,19 +138,25 @@ export default class TimetableScreenDaySpecific extends Component {
                             <Text style={this.state.light_theme ? styles.appTitleTextLight : styles.appTitleText}>Timetable App</Text>
                         </View>
                     </View>
-                    <View style={styles.postContainer}>
-                        <ScrollView style={this.state.light_theme ? styles.postCardLight : styles.postCard}>
-                            <Image source={require("../assets/timetable-monday-to-sunday.png")} style={styles.postImage} />
-                            <View style={styles.captionContainer}>
-                                <Text style={this.state.light_theme ? styles.captionTextLight : styles.captionText}>
-                                    {this.props.route.params.timetable.first_period}{"\n"}
-                                    {this.props.route.params.timetable.second_period}{"\n"}
-                                    {this.props.route.params.timetable.third_period}{"\n"}
-                                    {this.props.route.params.timetable.fourth_period}{"\n"}
-                                    {this.props.route.params.timetable.fifth_period}{"\n"}
-                                    {this.props.route.params.timetable.sixth_period}{"\n"}
-                                    {this.props.route.params.timetable.seventh_period}{"\n"}
-                                    {this.props.route.params.timetable.eighth_period}
+                    <View style={styles.timetableContainer}>
+                        <ScrollView style={this.state.light_theme ? styles.timetableLight : styles.timetable}>
+                            <View style={styles.periodsContainer}>
+                                <Text style={this.state.light_theme ? styles.periodsTextLight : styles.periodsText}>
+                                    1st Period: {this.state.first_period}{"\n"}
+                                    {"\n"}
+                                    2nd Period: {this.state.second_period}{"\n"}
+                                    {"\n"}
+                                    3rd Period: {this.state.third_period}{"\n"}
+                                    {"\n"}
+                                    4th Period: {this.state.fourth_period}{"\n"}
+                                    {"\n"}
+                                    5th Period: {this.state.fifth_period}{"\n"}
+                                    {"\n"}
+                                    6th Period: {this.state.sixth_period}{"\n"}
+                                    {"\n"}
+                                    7th Period: {this.state.seventh_period}{"\n"}
+                                    {"\n"}
+                                    8th Period: {this.state.eighth_period}
                                 </Text>
                             </View>
                         </ScrollView>
@@ -118,109 +205,30 @@ const styles = StyleSheet.create({
         color: "black",
         fontSize: RFValue(28),
     },
-    postContainer: {
+    timetableContainer: {
         flex: 1
     },
-    postCard: {
+    timetable: {
         margin: RFValue(20),
         backgroundColor: "#2a2a2a",
         borderRadius: RFValue(20)
     },
-    postCardLight: {
+    timetableLight: {
         margin: RFValue(20),
         backgroundColor: "#eaeaea",
         borderRadius: RFValue(20)
     },
-    actionContainer: {
-        justifyContent: "center",
-        alignItems: "center",
-        margin: RFValue(10)
-    },
-    likeButton: {
-        width: RFValue(160),
-        height: RFValue(40),
-        flexDirection: "row",
-        backgroundColor: "#eb3948",
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: RFValue(30)
-    },
-    likeText: {
-        color: "white",
-        fontSize: RFValue(25),
-        marginLeft: RFValue(5)
-    },
-    likeTextLight: {    
-        fontSize: RFValue(25),
-        marginLeft: RFValue(5)
-    },
-    authorContainer: {
-        height: RFPercentage(10),
-        padding: RFValue(10),
-        flexDirection: "row"
-    },
-    authorImageContainer: {
-        flex: 0.15,
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    profileImage: {
-        width: "100%",
-        height: "100%",
-        resizeMode: "contain",
-        borderRadius: RFValue(100)
-    },
-    authorNameContainer: {
-        flex: 0.85,
-        padding: RFValue(10),
-        justifyContent: "center"
-    },
-    authorNameText: {
-        color: "white",
-        fontSize: RFValue(20),
-    },
-    authorNameTextLight: {
-        color: "black",
-        fontSize: RFValue(20)
-    },
-    postImage: {
-        width: "100%",
-        alignSelf: "center",
-        height: RFValue(200),
-        borderTopLeftRadius: RFValue(20),
-        borderTopRightRadius: RFValue(20),
-        resizeMode: "contain"
-    },
-    captionContainer: {
+    periodsContainer: {
         padding: RFValue(10)
     },
-    captionText: {
+    periodsText: {
         fontSize: 20,
         color: "white",
         paddingTop: RFValue(10)
     },
-    captionTextLight: {
+    periodsTextLight: {
         fontSize: 20,
         color: "black",
         paddingTop: RFValue(10)
-    },
-    likeButtonLiked: {
-        width: RFValue(160),
-        height: RFValue(40),
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "row",
-        backgroundColor: "#eb3948",
-        borderRadius: RFValue(30)
-    },
-    likeButtonDisliked: {
-        width: RFValue(160),
-        height: RFValue(40),
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "row",
-        borderColor: "#eb3948",
-        borderWidth: 2,
-        borderRadius: RFValue(30)
     }
 });

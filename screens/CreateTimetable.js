@@ -672,14 +672,6 @@ const styles = StyleSheet.create({
     fieldsContainer: {
         flex: 0.85
     },
-    previewImage: {
-        width: "93%",
-        height: RFValue(250),
-        alignSelf: "center",
-        borderRadius: RFValue(10),
-        marginVertical: RFValue(10),
-        resizeMode: "contain"
-    },
     inputFont: {
         marginTop: RFValue(10),
         height: RFValue(40),

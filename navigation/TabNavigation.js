@@ -60,7 +60,7 @@ export default class BottomTabNavigator extends Component {
               iconName = focused
                 ? 'home'
                 : 'home-outline';
-            } else if (route.name === 'CreateTimetable') {
+            } else if (route.name === 'Create Timetable') {
               iconName = focused ? 'create' : 'create-outline';
             }
             return <Ionicons name={iconName} size={RFValue(25)} color={color} style={styles.icons} />;
@@ -83,7 +83,7 @@ export default class BottomTabNavigator extends Component {
         }}*/
       >
         <Tab.Screen name="Feed" component={this.renderFeed} options={{unmountOnBlur: true}} />
-        <Tab.Screen name="CreateTimetable" component={this.renderPost} options={{unmountOnBlur: true}} />
+        <Tab.Screen name="Create Timetable" component={this.renderPost} options={{unmountOnBlur: true}} />
       </Tab.Navigator>
     );
   }

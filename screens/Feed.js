@@ -21,27 +21,16 @@ export default class Feed extends Component {
         this.state = {
             light_theme: true,
             timetable: [],
-            timetable2: []
+            timetable2: [],
+            timetable3: [],
+            timetable4: [],
+            timetable5: [],
+            timetable6: [],
+            timetable7: []
         };
     }
 
     fetchTimetable = async() => {
-        /*await firebase.database().ref("/posts/").on("value", snapshot => {
-          let posts = [];
-          if(snapshot.val()){
-            Object.keys(snapshot.val()).forEach(function (key){
-              posts.push({
-                key: key,
-                value: snapshot.val()[key]
-              });
-            });
-          }
-          this.setState({posts: posts});
-          this.props.setUpdateToFalse();
-        },
-        function (errorObject){
-          console.log("The Read Failed: " + errorObject.code);
-        });*/
         await firebase.firestore().collection("periods").doc("monday_" + firebase.auth().currentUser.uid).get().then((doc) => {
             let timetable = [];
             if(doc.exists){
@@ -173,9 +162,9 @@ export default class Feed extends Component {
                         <Text style={this.state.light_theme ? styles.appTitleTextLight : styles.appTitleText}>Timetable App</Text>
                     </View>
                 </View>
-                {!this.state.timetable[0] && !this.state.timetable2[0] ? (
-                    <View style = {styles.noPosts}>
-                        <Text style = {this.state.light_theme ? styles.noPostsTextLight : styles.noPostsText}>Timetable is not created. Please create Timetable to show Timetables.</Text>
+                {!this.state.timetable[0] && !this.state.timetable2[0] && !this.state.timetable3[0]&& !this.state.timetable4[0]&& !this.state.timetable5[0]&& !this.state.timetable6[0]&& !this.state.timetable7[0] ? (
+                    <View style = {styles.noTimetable}>
+                        <Text style = {this.state.light_theme ? styles.noTimetableTextLight : styles.noTimetableText}>Timetable is not created. Please create Timetable to show Timetables.</Text>
                     </View>
                 ) : (
                     <View style={styles.cardContainer}>
@@ -184,7 +173,7 @@ export default class Feed extends Component {
                             data={this.state.test}
                             renderItem={this.renderItem}
                         />
-                </View>
+                    </View>
                 )}
             </View>
         );
@@ -232,15 +221,15 @@ const styles = StyleSheet.create({
     cardContainer: {
         flex: 0.85
     },
-    noPosts: {
+    noTimetable: {
       flex: 0.85,
       justifyContent: "center",
     },
-    noPostsText: {
+    noTimetableText: {
       fontSize: RFValue(40),
       color: "white"
     },
-    noPostsTextLight: {
+    noTimetableTextLight: {
       fontSize: RFValue(40),
       color: "black"
     }
