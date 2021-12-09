@@ -92,6 +92,7 @@ If you have downloaded using Github.com
 ## New Loading Animation:-
 Starting Today, we have added a new Loading Animation in our Loading Screen as shown below
 ![Loading](assets/loading.gif)
+
 This will be shown to users before they will login to our App. This feature is marked as Stable, though if you want to work on this Feature for increased Stability, please follow the instructions on [How to work on this App](https://github.com/ambit741235/Timetable-App#how-to-work-on-this-app-)
 Thank You for having much patience for a great, stable and stylish release of this App.
 You can feel free to create a new Issue if you want any changes/if there is a bug/if any features are missing.
