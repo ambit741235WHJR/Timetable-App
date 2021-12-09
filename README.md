@@ -1,4 +1,4 @@
-[![Changes](https://img.shields.io/badge/Commits-5-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
+[![Changes](https://img.shields.io/badge/Commits-8-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
 [![Development Status](https://img.shields.io/badge/Development%20Status-Complete-brightgreen)](https://github.com/ambit741235/Timetable-App#current-development-status-)
 
 # Timetable App
@@ -82,7 +82,7 @@ If you have downloaded using Github.com
 
 1. [02-12-2021: 1st Phase of Development (Starting of this App)](https://github.com/ambit741235/Timetable-App/tree/d5f2e1434730ea38f59920e7ffa12699f50216cc)
 2. [07-12-2021: 2nd Phase of Development (More inclusion)](https://github.com/ambit741235/Timetable-App/tree/f6a379c7077643596c70fc3696853f6038965e0b)
-3. [07-12-2021: Final Phase of Development (Changes included below)](https://github.com/ambit741235/Timetable-App/tree/f6a379c7077643596c70fc3696853f6038965e0b)
+3. [07-12-2021: Final Phase of Development (Changes included below)](https://github.com/ambit741235/Timetable-App/tree/f517d592efb3681f137f7d78de9114a39101713a)
 
 ## Changes:-
 1. Starting of this App.
