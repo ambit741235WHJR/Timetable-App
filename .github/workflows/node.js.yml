@@ -24,6 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: ipconfig
     - run: npm install -g yarn
     - run: npm install -g expo-cli
     - run: yarn install
