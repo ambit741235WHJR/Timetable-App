@@ -1,4 +1,4 @@
-[![Changes](https://img.shields.io/badge/Commits-11-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
+[![Changes](https://img.shields.io/badge/Commits-18-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
 [![Development Status](https://img.shields.io/badge/Development%20Status-Complete-brightgreen)](https://github.com/ambit741235/Timetable-App#current-development-status-)
 [![Install Packages of this App](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml/badge.svg)](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml)
 
@@ -84,7 +84,7 @@ If you have downloaded using Github.com
 1. [02-12-2021: 1st Phase of Development (Starting of this App)](https://github.com/ambit741235/Timetable-App/tree/d5f2e1434730ea38f59920e7ffa12699f50216cc)
 2. [07-12-2021: 2nd Phase of Development (More inclusion)](https://github.com/ambit741235/Timetable-App/tree/f6a379c7077643596c70fc3696853f6038965e0b)
 3. [09-12-2021: Final Phase of Development (Changes included below)](https://github.com/ambit741235/Timetable-App/tree/f517d592efb3681f137f7d78de9114a39101713a)
-4. [10-12-2021: New Splash Screen (Info included below)](https://github.com/ambit741235/Timetable-App/tree/f517d592efb3681f137f7d78de9114a39101713a)
+4. [10-12-2021: New Splash Screen (Info included below)](https://github.com/ambit741235/Timetable-App/tree/c1cbe54c6c9245866eb31ffe73a177f48549d00f)
 
 ## Changes:-
 1. Starting of this App.
