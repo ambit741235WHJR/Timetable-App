@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
+import AnimatedSplash from "react-native-animated-splash-screen";
 
 import LoginScreen from "./screens/LoginScreen";
 import LoadingScreen from "./screens/LoadingScreen";
@@ -22,8 +23,23 @@ const AppSwitchNavigator = createSwitchNavigator({
 
 const AppNavigator = createAppContainer(AppSwitchNavigator);
 
-export default function App() {
-  return (
-    <AppNavigator/>
-  );
+export default class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      isLoaded: false
+    };
+  }
+
+  componentDidMount(){
+    setTimeout(() => this.setState({ isLoaded: true }), 1500);
+  }
+
+  render(){
+    return (
+      <AnimatedSplash translucent={true} isLoaded={this.state.isLoaded} logoImage={require("./assets/logo.png")} backgroundColor={"#262626"} logoHeight={150} logoWidth={150}>
+        <AppNavigator/>
+      </AnimatedSplash>
+    );
+  }
 }
