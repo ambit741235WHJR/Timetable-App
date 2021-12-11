@@ -27,4 +27,5 @@ jobs:
     - run: npm install -g yarn
     - run: npm install -g expo-cli
     - run: yarn install
+    - run: expo build:android -t apk
     #- run: npm test
