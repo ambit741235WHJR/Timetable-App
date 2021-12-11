@@ -1,6 +1,6 @@
 //Importing React Module and other React Native with React Navigation Module
 import * as React from 'react';
-import { Animated } from 'react-native';
+import { Alert } from 'react-native';
 import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 import AnimatedSplash from "react-native-animated-splash-screen";
 
@@ -12,6 +12,9 @@ import DashboardScreen from "./screens/DashboardScreen";
 //Importing Complete Firebase
 import firebase from 'firebase';
 import { firebaseConfig } from "./config";
+
+//Importing Expo Modules
+import * as Updates from 'expo-updates';
 
 if(!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -35,8 +38,29 @@ export default class App extends React.Component {
     };
   }
 
+  fetchUpdates = async() => {
+    try{
+      const update = await Updates.checkForUpdateAsync();
+      if(update.isAvailable){
+        Alert.alert("Timetable App", "A new Update is available\nUpdate Now?",[{
+          text: "YES",
+          onPress: () => {
+            await Updates.fetchUpdateAsync();
+            await Updates.reloadAsync();
+          }
+        },{
+          text: "NO",
+          onPress: () => console.log("Update Cancelled")
+        }],{cancelable: false})
+      }
+    } catch(e){
+      Alert.alert("Timetable App", "Error while fetching Updates.\nError:\n" + e.message);
+    }
+  }
+
   componentDidMount(){
     setTimeout(() => this.setState({ isLoaded: true }), 1500);
+    this.fetchUpdates();
   }
 
   render(){
