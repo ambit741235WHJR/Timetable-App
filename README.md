@@ -5,8 +5,6 @@
 # Timetable App
 Welcome to the Github Page of Timetale App. Here, you will find the Source Code, Current Development Status and Changes of this App.
 
-**Information: APKs will be ready in just a few minutes. In the meantime, if you want to work on our Source Code, please follow the below instructions on How to work on this App.**
-
 ## **How to work on this App:-**
 
 1. Fork this repository
@@ -86,7 +84,7 @@ If you have downloaded using Github.com
 3. [09-12-2021: Final Phase of Development](https://github.com/ambit741235/Timetable-App/tree/f517d592efb3681f137f7d78de9114a39101713a)
 4. [10-12-2021: New Splash Screen](https://github.com/ambit741235/Timetable-App/tree/c1cbe54c6c9245866eb31ffe73a177f48549d00f)
 5. [11-12-2021: Adding Comments to App.js, Modifying app.json for App Icon and Package Name](https://github.com/ambit741235/Timetable-App/tree/464b3c5ee338c2c361470dd444aa1f171b39e912)
-6. [11-12-2021: Bug Fixes (Fixes in the Release Tab)](https://github.com/ambit741235/Timetable-App/tree/464b3c5ee338c2c361470dd444aa1f171b39e912)
+6. [11-12-2021: Bug Fixes (Fixes in the Release Tab)](https://github.com/ambit741235/Timetable-App/tree/2c0a3552d80fbb038f377565880156f29c23d81d)
 
 ## Changes:-
 1. Starting of this App.
