@@ -1,11 +1,11 @@
-[![Changes](https://img.shields.io/badge/Commits-18-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
+[![Changes](https://img.shields.io/badge/Commits-20-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
 [![Development Status](https://img.shields.io/badge/Development%20Status-Complete-brightgreen)](https://github.com/ambit741235/Timetable-App#current-development-status-)
 [![Install Packages of this App](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml/badge.svg)](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml)
 
 # Timetable App
 Welcome to the Github Page of Timetale App. Here, you will find the Source Code, Current Development Status and Changes of this App.
 
-**Information: APKs will be ready tomorrow or day after tomorrow. If you want to work on our Source Code, please follow the below instructions on How to work on this App.**
+**Information: APKs will be ready in just a few minutes. In the meantime, if you want to work on our Source Code, please follow the below instructions on How to work on this App.**
 
 ## **How to work on this App:-**
 
@@ -83,23 +83,15 @@ If you have downloaded using Github.com
 
 1. [02-12-2021: 1st Phase of Development (Starting of this App)](https://github.com/ambit741235/Timetable-App/tree/d5f2e1434730ea38f59920e7ffa12699f50216cc)
 2. [07-12-2021: 2nd Phase of Development (More inclusion)](https://github.com/ambit741235/Timetable-App/tree/f6a379c7077643596c70fc3696853f6038965e0b)
-3. [09-12-2021: Final Phase of Development (Changes included below)](https://github.com/ambit741235/Timetable-App/tree/f517d592efb3681f137f7d78de9114a39101713a)
-4. [10-12-2021: New Splash Screen (Info included below)](https://github.com/ambit741235/Timetable-App/tree/c1cbe54c6c9245866eb31ffe73a177f48549d00f)
+3. [09-12-2021: Final Phase of Development](https://github.com/ambit741235/Timetable-App/tree/f517d592efb3681f137f7d78de9114a39101713a)
+4. [10-12-2021: New Splash Screen](https://github.com/ambit741235/Timetable-App/tree/c1cbe54c6c9245866eb31ffe73a177f48549d00f)
+5. [11-12-2021: Adding Comments to App.js, Modifying app.json for App Icon and Package Name](https://github.com/ambit741235/Timetable-App/tree/464b3c5ee338c2c361470dd444aa1f171b39e912)
 
 ## Changes:-
 1. Starting of this App.
 2. More inclusion in this App.
 3. Final Touches, Removing Messiness, Fixing Bugs, Added a new Loading Animation, more information below.
 4. New Splash Screen, more information below.
-
-## New Loading Animation:-
-Starting Today, we have added a new Splash in our Loading Screen
-
-This will be shown to users before they will login to our App, just like before we have added new Loading Animation before they will login to our App. This feature is marked as Stable, though if you want to work on this Feature for increased Stability, please follow the instructions on [How to work on this App](https://github.com/ambit741235/Timetable-App#how-to-work-on-this-app-)
-Thank You for having much patience for a great, stable and stylish release of this App.
-You can feel free to create a new Issue if you want any changes/if there is a bug/if any features are missing.
-And, once again, Thank You and Have a nice day:)
-
-**NEW UPDATE: APKs will be available tomorrow or day after tomorrow.**
+5. Adding Comments to App.js, Modifying app.json for App Icon and Package Name.
 
 **If any changes required, you can feel free to create a new issue in Issues/New Issue in Github**
