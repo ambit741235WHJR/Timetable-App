@@ -81,7 +81,7 @@ export default class LoginScreen extends Component {
         androidClientId:
           "170042882229-6jtpcjl13n272havtp9clkm5n3ehl97q.apps.googleusercontent.com",
         androidStandaloneAppClientId:
-          "170042882229-6jtpcjl13n272havtp9clkm5n3ehl97q.apps.googleusercontent.com",
+          "170042882229-605d9b20ebft8tfgqdu1a1bghk55m479.apps.googleusercontent.com",
         scopes: ["profile", "email"]
       });
 

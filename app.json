@@ -19,7 +19,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.ambit741235.TimetableApp"
+      "package": "com.ambit741235.TimetableApp",
+      "config": {
+        "googleSignIn": {
+          "certificateHash": "B3:6F:EE:DD:52:F2:11:C2:F1:78:F0:F2:BD:48:EE:96:2F:13:E2:26"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
