@@ -1,6 +1,7 @@
-[![Changes](https://img.shields.io/badge/Commits-24-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
+[![Changes](https://img.shields.io/badge/Commits-31-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
 [![Development Status](https://img.shields.io/badge/Development%20Status-Complete-brightgreen)](https://github.com/ambit741235/Timetable-App#current-development-status-)
 [![Install Packages of this App](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml/badge.svg)](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml)
+[![App Version](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&prefix=v&query=expo.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fambit741235%2FTimetable-App%2Fmain%2Fapp.json)](https://github.com/ambit741235/Timetable-App/releases)
 
 # Timetable App
 Welcome to the Github Page of Timetale App. Here, you will find the Source Code, Current Development Status and Changes of this App.
@@ -84,7 +85,8 @@ If you have downloaded using Github.com
 3. [09-12-2021: Final Phase of Development](https://github.com/ambit741235/Timetable-App/tree/f517d592efb3681f137f7d78de9114a39101713a)
 4. [10-12-2021: New Splash Screen](https://github.com/ambit741235/Timetable-App/tree/c1cbe54c6c9245866eb31ffe73a177f48549d00f)
 5. [11-12-2021: Adding Comments to App.js, Modifying app.json for App Icon and Package Name](https://github.com/ambit741235/Timetable-App/tree/464b3c5ee338c2c361470dd444aa1f171b39e912)
-6. [11-12-2021: Bug Fixes (Fixes in the Release Tab)](https://github.com/ambit741235/Timetable-App/tree/2c0a3552d80fbb038f377565880156f29c23d81d)
+6. [11-12-2021: Bug Fixes](https://github.com/ambit741235/Timetable-App/tree/2c0a3552d80fbb038f377565880156f29c23d81d)
+7. [11-12-2021: Bug Fixes with Update to Version 1.0.3](https://github.com/ambit741235/Timetable-App/tree/2c0a3552d80fbb038f377565880156f29c23d81d)
 
 ## Changes:-
 1. Starting of this App.
@@ -93,5 +95,6 @@ If you have downloaded using Github.com
 4. New Splash Screen, more information below.
 5. Adding Comments to App.js, Modifying app.json for App Icon and Package Name.
 6. Bug Fixes.
+6. Bug Fixes and App Updated to Version 1.0.3.
 
 **If any changes required, you can feel free to create a new issue in Issues/New Issue in Github**

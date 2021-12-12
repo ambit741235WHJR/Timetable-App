@@ -2,9 +2,11 @@
   "expo": {
     "name": "Timetable App",
     "slug": "Timetable-App",
-    "version": "1.0.2",
+    "scheme": "timetable",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "githubUrl": "https://github.com/ambit741235/Timetable-App",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -19,12 +21,27 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.ambit741235.TimetableApp",
+      "package": "com.ambit741235.timetableapp",
       "config": {
-        "googleSignIn": {
-          "certificateHash": "B3:6F:EE:DD:52:F2:11:C2:F1:78:F0:F2:BD:48:EE:96:2F:13:E2:26"
+        "googleMaps": {
+          "apiKey": "AIzaSyB5LuE2znc-e9XPMHN-GLHK8D_cDHoOdHA"
         }
-      }
+      },
+      "intentFilters":[
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "timetable",
+              "host": "app"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

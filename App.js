@@ -44,7 +44,7 @@ export default class App extends React.Component {
       if(update.isAvailable){
         Alert.alert("Timetable App", "A new Update is available\nUpdate Now?",[{
           text: "YES",
-          onPress: () => {
+          onPress: async() => {
             await Updates.fetchUpdateAsync();
             await Updates.reloadAsync();
           }
@@ -54,7 +54,7 @@ export default class App extends React.Component {
         }],{cancelable: false})
       }
     } catch(e){
-      Alert.alert("Timetable App", "Error while fetching Updates.\nError:\n" + e.message)
+      //Alert.alert("Timetable App", "Error while fetching Updates.\nError:\n" + e.message)
     }
   }
 
