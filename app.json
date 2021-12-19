@@ -18,7 +18,9 @@
       ]
     ],
     "notification": {
-      "icon": "./assets/icon_notifications.png"
+      "icon": "./assets/icon_notifications.png",
+      "androidMode": "collapse",
+      "androidCollapsedTitle": "#{unread_notifications} new interactions"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

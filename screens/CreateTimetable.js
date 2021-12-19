@@ -20,6 +20,7 @@ import firebase from "firebase";
 
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants';
+import * as Device from 'expo-device';
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
@@ -69,7 +70,7 @@ export default class CreatePost extends Component {
 
     async registerForPushNotificationsAsync(){
         let token;
-        if (Constants.isDevice) {
+        if (Device.isDevice) {
             const { status: existingStatus } = await Notifications.getPermissionsAsync();
             let finalStatus = existingStatus;
             if (existingStatus !== 'granted') {
@@ -82,15 +83,25 @@ export default class CreatePost extends Component {
             }
             token = (await Notifications.getExpoPushTokenAsync()).data;
             console.log(token);
-            //Alert.alert(token);
+            Alert.alert(token);
         } else {
             Alert.alert('Must use physical device for Push Notifications');
         }
 
         if (Platform.OS === 'android') {
             Notifications.setNotificationChannelAsync('default', {
-                name: 'default',
+                name: 'Default Notifications',
                 importance: Notifications.AndroidImportance.MAX,
+                vibrationPattern: [0, 250, 250, 250],
+                lightColor: '#FF231F7C',
+            });
+            Notifications.setNotificationChannelAsync('announcements-info', {
+                name: 'Announcements and info',
+                vibrationPattern: [0, 250, 250, 250],
+                lightColor: '#FF231F7C',
+            });
+            Notifications.setNotificationChannelAsync('updates', {
+                name: "News regarding new Updates",
                 vibrationPattern: [0, 250, 250, 250],
                 lightColor: '#FF231F7C',
             });
@@ -100,8 +111,10 @@ export default class CreatePost extends Component {
     }
 
     testNotificationSendInTime = async() => {
-        time = new Date().getHours();
-        Alert.alert("Test", time);
+        time = new Date().getTime();
+        if(time === "18:30"){
+            //Notifications.scheduleNotificationAsync()
+        }
     }
 
     async addPeriods(){
