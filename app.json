@@ -7,6 +7,19 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "githubUrl": "https://github.com/ambit741235/Timetable-App",
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/adaptive-icon.png",
+          "color": "#ffffff",
+          "sounds": ["./assets/notification.mp3"]
+        }
+      ]
+    ],
+    "notification": {
+      "icon": "./assets/icon_notifications.png"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -22,14 +35,11 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.ambit741235.timetableapp",
-      "config": {
-        "googleMaps": {
-          "apiKey": "AIzaSyB5LuE2znc-e9XPMHN-GLHK8D_cDHoOdHA"
-        }
-      },
+      "googleServicesFile": "./google-services.json",
       "intentFilters":[
         {
           "action": "VIEW",
+          "autoVerify": false,
           "data": [
             {
               "scheme": "timetable",
@@ -37,6 +47,23 @@
             }
           ],
           "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ],
+      "intentFilters":[
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data":[
+            {
+              "scheme": "https",
+              "host": "android-deeplink-test-22b86.firebaseapp.com",
+              "pathPrefix": "/"
+            }
+          ],
+          "category":[
             "BROWSABLE",
             "DEFAULT"
           ]

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "170042882229",
+    "firebase_url": "https://timetable-app-89b65-default-rtdb.firebaseio.com",
+    "project_id": "timetable-app-89b65",
+    "storage_bucket": "timetable-app-89b65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170042882229:android:4930498ea32937e5c226fc",
+        "android_client_info": {
+          "package_name": "com.ambit741235.timetableapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170042882229-i2jd76pvcfh8gnjffq0bvdg4davm6602.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQOtt6ZHluCw2IFSO-gHKmv_8uLaBJjHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170042882229-er0q8evqgbr8ba45gckkmtgsevdqb3dl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

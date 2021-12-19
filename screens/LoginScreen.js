@@ -3,16 +3,6 @@ import { StyleSheet, View, Text, SafeAreaView, Image, TouchableOpacity, StatusBa
 import { RFValue } from "react-native-responsive-fontsize";
 import * as Google from "expo-google-app-auth";
 import firebase from "firebase";
-import * as Linking from 'expo-linking';
-import * as AppAuth from 'expo-app-auth';
-import * as WebBrowser from 'expo-web-browser';
-
-/*const redirectUrl = Linking.createURL('auth/google',{
-  queryParams: {result: 'result', resultAccessToken: 'result.accessToken'}
-});
-
-let { path, queryParams } = Linking.parse(redirectUrl);
-Alert.alert(queryParams.result);*/
 
 export default class LoginScreen extends Component {
   constructor(props){

@@ -54,7 +54,7 @@ export default class App extends React.Component {
         }],{cancelable: false})
       }
     } catch(e){
-      //Alert.alert("Timetable App", "Error while fetching Updates.\nError:\n" + e.message)
+      Alert.alert("Timetable App", "Error while fetching Updates.\nError:\n" + e.message)
     }
   }
 

@@ -18,6 +18,17 @@ import DropDownPicker from "react-native-dropdown-picker";
 
 import firebase from "firebase";
 
+import * as Notifications from 'expo-notifications';
+import Constants from 'expo-constants';
+
+Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldPlaySound: true,
+      shouldSetBadge: false,
+    }),
+  });
+
 export default class CreatePost extends Component {
     constructor(props) {
         super(props);
@@ -41,6 +52,56 @@ export default class CreatePost extends Component {
     componentDidMount() {
         this.fetchUser();
         this.readPeriods();
+        this.registerForPushNotificationsAsync();
+        this.testNotificationSendInTime();
+    }
+
+    async schedulePushNotification(day){
+        await Notifications.scheduleNotificationAsync({
+            content: {
+              title: day + " Routine",
+              body: "You just edited the " + day + " Routine",
+              sound: "notification.mp3"
+            },
+            trigger: { seconds: 2 },
+        });
+    }
+
+    async registerForPushNotificationsAsync(){
+        let token;
+        if (Constants.isDevice) {
+            const { status: existingStatus } = await Notifications.getPermissionsAsync();
+            let finalStatus = existingStatus;
+            if (existingStatus !== 'granted') {
+                const { status } = await Notifications.requestPermissionsAsync();
+                finalStatus = status;
+            }
+            if (finalStatus !== 'granted') {
+                Alert.alert('Failed to get push token for push notification!');
+                return;
+            }
+            token = (await Notifications.getExpoPushTokenAsync()).data;
+            console.log(token);
+            //Alert.alert(token);
+        } else {
+            Alert.alert('Must use physical device for Push Notifications');
+        }
+
+        if (Platform.OS === 'android') {
+            Notifications.setNotificationChannelAsync('default', {
+                name: 'default',
+                importance: Notifications.AndroidImportance.MAX,
+                vibrationPattern: [0, 250, 250, 250],
+                lightColor: '#FF231F7C',
+            });
+        }
+
+        return token;
+    }
+
+    testNotificationSendInTime = async() => {
+        time = new Date().getHours();
+        Alert.alert("Test", time);
     }
 
     async addPeriods(){
@@ -58,7 +119,8 @@ export default class CreatePost extends Component {
                     uid: this.state.uid,
                     day: this.state.day
                 });
-                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false })
+                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
+                this.schedulePushNotification("Monday");
             }else{
                 Alert.alert("Error", "All Fields are required!!!", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
             }
@@ -76,7 +138,8 @@ export default class CreatePost extends Component {
                     uid: this.state.uid,
                     day: this.state.day
                 });
-                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false })
+                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
+                this.schedulePushNotification("Tuesday");
             }else{
                 Alert.alert("Error", "All Fields are required!!!", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
             }
@@ -94,7 +157,8 @@ export default class CreatePost extends Component {
                     uid: this.state.uid,
                     day: this.state.day
                 });
-                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false })
+                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
+                this.schedulePushNotification("Wednesday");
             }else{
                 Alert.alert("Error", "All Fields are required!!!", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
             }
@@ -112,7 +176,8 @@ export default class CreatePost extends Component {
                     uid: this.state.uid,
                     day: this.state.day
                 });
-                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false })
+                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
+                this.schedulePushNotification("Thursday");
             }else{
                 Alert.alert("Error", "All Fields are required!!!", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
             }
@@ -130,7 +195,8 @@ export default class CreatePost extends Component {
                     uid: this.state.uid,
                     day: this.state.day
                 });
-                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false })
+                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
+                this.schedulePushNotification("Friday");
             }else{
                 Alert.alert("Error", "All Fields are required!!!", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
             }
@@ -148,7 +214,8 @@ export default class CreatePost extends Component {
                     uid: this.state.uid,
                     day: this.state.day
                 });
-                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false })
+                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
+                this.schedulePushNotification("Saturday");
             }else{
                 Alert.alert("Error", "All Fields are required!!!", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
             }
@@ -166,7 +233,8 @@ export default class CreatePost extends Component {
                     uid: this.state.uid,
                     day: this.state.day
                 });
-                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false })
+                Alert.alert("Timetable App - INFO", "Thanks for using this App. Your Information is submitted.", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
+                this.schedulePushNotification("Sunday");
             }else{
                 Alert.alert("Error", "All Fields are required!!!", [{ text: "OK", onPress: () => console.log("OK Pressed") }], { cancelable: false });
             }
