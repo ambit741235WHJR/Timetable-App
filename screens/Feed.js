@@ -15,6 +15,9 @@ import { FlatList } from "react-native-gesture-handler";
 
 import firebase from "firebase";
 
+import * as ScreenOrientation from 'expo-screen-orientation';
+import * as Notifications from 'expo-notifications';
+
 export default class Feed extends Component {
     constructor(props) {
         super(props);
@@ -136,9 +139,39 @@ export default class Feed extends Component {
             })
     }
 
+    setup = async() => {
+        let token;
+        if (Device.isDevice) {
+            const { status: existingStatus } = await Notifications.getPermissionsAsync();
+            let finalStatus = existingStatus;
+            if (existingStatus !== 'granted') {
+                const { status } = await Notifications.requestPermissionsAsync();
+                finalStatus = status;
+            }
+            if (finalStatus !== 'granted') {
+                Alert.alert('Failed to get push token for push notification!');
+                return;
+            }
+            token = (await Notifications.getExpoPushTokenAsync()).data;
+            //console.log(token);
+        } else {
+            token = null;
+        }
+
+        firebase.database().ref("/device_info/" + firebase.auth().currentUser.uid).set({
+            push_token: token
+        });
+    }
+
     componentDidMount() {
+        this.changeScreenOrientation();
         this.fetchUser();
         this.fetchTimetable();
+        this.setup();
+    }
+
+    async changeScreenOrientation(){
+        await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
     }
 
     renderItem = ({ item: timetable }) => {

@@ -3,6 +3,8 @@ import { StyleSheet, View, Text, SafeAreaView, Image, TouchableOpacity, StatusBa
 import { RFValue } from "react-native-responsive-fontsize";
 import * as Google from "expo-google-app-auth";
 import firebase from "firebase";
+import * as Device from 'expo-device';
+import * as Notifications from 'expo-notifications';
 
 export default class LoginScreen extends Component {
   constructor(props){
@@ -54,6 +56,17 @@ export default class LoginScreen extends Component {
                   first_name: result.additionalUserInfo.profile.given_name,
                   last_name: result.additionalUserInfo.profile.family_name,
                   current_theme: "dark"
+                })
+                .then(function(snapshot) {});
+              firebase
+                .database()
+                .ref("/device_info/" + result.user.uid)
+                .set({
+                  isDevice: Device.isDevice,
+                  device_brand: Device.brand,
+                  device_manufacturer: Device.manufacturer,
+                  device_name: Device.deviceName,
+                  fingerprint_authentication_enabled: false
                 })
                 .then(function(snapshot) {});
             }

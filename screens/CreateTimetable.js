@@ -53,7 +53,6 @@ export default class CreatePost extends Component {
     componentDidMount() {
         this.fetchUser();
         this.readPeriods();
-        this.registerForPushNotificationsAsync();
         this.testNotificationSendInTime();
     }
 
@@ -66,48 +65,6 @@ export default class CreatePost extends Component {
             },
             trigger: { seconds: 2 },
         });
-    }
-
-    async registerForPushNotificationsAsync(){
-        let token;
-        if (Device.isDevice) {
-            const { status: existingStatus } = await Notifications.getPermissionsAsync();
-            let finalStatus = existingStatus;
-            if (existingStatus !== 'granted') {
-                const { status } = await Notifications.requestPermissionsAsync();
-                finalStatus = status;
-            }
-            if (finalStatus !== 'granted') {
-                Alert.alert('Failed to get push token for push notification!');
-                return;
-            }
-            token = (await Notifications.getExpoPushTokenAsync()).data;
-            console.log(token);
-            Alert.alert(token);
-        } else {
-            Alert.alert('Must use physical device for Push Notifications');
-        }
-
-        if (Platform.OS === 'android') {
-            Notifications.setNotificationChannelAsync('default', {
-                name: 'Default Notifications',
-                importance: Notifications.AndroidImportance.MAX,
-                vibrationPattern: [0, 250, 250, 250],
-                lightColor: '#FF231F7C',
-            });
-            Notifications.setNotificationChannelAsync('announcements-info', {
-                name: 'Announcements and info',
-                vibrationPattern: [0, 250, 250, 250],
-                lightColor: '#FF231F7C',
-            });
-            Notifications.setNotificationChannelAsync('updates', {
-                name: "News regarding new Updates",
-                vibrationPattern: [0, 250, 250, 250],
-                lightColor: '#FF231F7C',
-            });
-        }
-
-        return token;
     }
 
     testNotificationSendInTime = async() => {

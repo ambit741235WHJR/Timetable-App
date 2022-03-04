@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import { View, ActivityIndicator, Button, StyleSheet } from 'react-native';
+import { View, ActivityIndicator, Button, StyleSheet, Alert } from 'react-native';
 import firebase from 'firebase';
 import LottieView from 'lottie-react-native';
+import * as LocalAuthentication from 'expo-local-authentication';
 
 export default class LoadingScreen extends Component{
-    componentDidMount(){
+    async componentDidMount(){
         this.animation.play();
-        setTimeout(() => {
+        setTimeout(async() => {
             this.checkIfLoggedIn();
         },2500);
     }
@@ -16,9 +17,20 @@ export default class LoadingScreen extends Component{
         this.animation.play();
     }
 
-    checkIfLoggedIn = () => {
-        firebase.auth().onAuthStateChanged((user) => {
+    checkIfLoggedIn = async() => {
+        firebase.auth().onAuthStateChanged(async(user) => {
             if(user) {
+                checker_fingerprint = '';
+                fingerprint_authentication_checker = await firebase.database().ref('/users/' + firebase.auth().currentUser.uid).on('value', function(snapshot){
+                    checker_fingerprint = snapshot.val().fingerprint_authentication_enabled;
+                });
+                if(checker_fingerprint === true){
+                    if(await LocalAuthentication.hasHardwareAsync() === true){
+                        await LocalAuthentication.authenticateAsync();
+                    }else if(await LocalAuthentication.hasHardwareAsync() === false){
+                        Alert.alert("ERROR!", "This device doesn't support Biometrics Authentication");
+                    }
+                }
                 this.props.navigation.navigate('DashboardScreen');
             }else {
                 this.props.navigation.navigate('LoginScreen');

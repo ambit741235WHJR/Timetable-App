@@ -13,7 +13,10 @@
         {
           "icon": "./assets/adaptive-icon.png",
           "color": "#ffffff",
-          "sounds": ["./assets/notification.mp3"]
+          "androidMode": "collapse",
+          "sounds": [
+            "./assets/notification.mp3"
+          ]
         }
       ]
     ],
@@ -38,34 +41,18 @@
       },
       "package": "com.ambit741235.timetableapp",
       "googleServicesFile": "./google-services.json",
-      "intentFilters":[
-        {
-          "action": "VIEW",
-          "autoVerify": false,
-          "data": [
-            {
-              "scheme": "timetable",
-              "host": "app"
-            }
-          ],
-          "category": [
-            "BROWSABLE",
-            "DEFAULT"
-          ]
-        }
-      ],
-      "intentFilters":[
+      "intentFilters": [
         {
           "action": "VIEW",
           "autoVerify": true,
-          "data":[
+          "data": [
             {
               "scheme": "https",
               "host": "android-deeplink-test-22b86.firebaseapp.com",
               "pathPrefix": "/"
             }
           ],
-          "category":[
+          "category": [
             "BROWSABLE",
             "DEFAULT"
           ]
@@ -74,6 +61,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
-  }
+    },
+    "sdkVersion": "44.0.0"
+  },
+  "name": "timetable-app"
 }

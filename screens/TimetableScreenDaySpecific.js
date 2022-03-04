@@ -1,3 +1,4 @@
+//Importing Basic React and Required React Native Modules
 import React, { Component } from "react";
 import {
     View,
@@ -7,24 +8,41 @@ import {
     Platform,
     StatusBar,
     Image,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
 } from "react-native";
 
+//Importing other React Native Modules
 import { RFValue } from "react-native-responsive-fontsize";
+import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
 
+//Importing Expo Modules
+import * as ScreenOrientation from 'expo-screen-orientation';
+
+//Importing other Required Modules
 import firebase from "firebase";
 
 export default class TimetableScreenDaySpecific extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            light_theme: true
+            light_theme: true,
+            HeadTable: ['1st Period', '2nd Period', '3rd Period', '4th Period', '5th Period', '6th Period', '7th Period', '8th Period'],
+            DataTable: [
+                []
+            ]
         };
     }
 
     componentDidMount() {
+        this.changeScreenOrientation();
         this.fetchUser();
         this.setup();
+        setTimeout(() => this.setup2(), 1);
+    }
+
+    async changeScreenOrientation(){
+        await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT);
     }
 
     fetchUser = () => {
@@ -41,21 +59,33 @@ export default class TimetableScreenDaySpecific extends Component {
     setup = () => {
         if(this.props.route.params.timetable.first_period === ''){
             this.setState({
-                first_period: 'X'
+                first_period: 'X',
+                DataTable: [
+                    ['X']
+                ]
             });
         }else{
             this.setState({
-                first_period: this.props.route.params.timetable.first_period
+                first_period: this.props.route.params.timetable.first_period,
+                DataTable: [
+                    [this.props.route.params.timetable.first_period]
+                ]
             });
         }
 
         if(this.props.route.params.timetable.second_period === ''){
             this.setState({
-                second_period: 'X'
+                second_period: 'X',
+                DataTable: [
+                    [...this.state.DataTable, [this.state.first_period, 'X']]
+                ]
             });
         }else if(this.props.route.params.timetable.second_period){
             this.setState({
-                second_period: this.props.route.params.timetable.second_period
+                second_period: this.props.route.params.timetable.second_period,
+                DataTable: [
+                    [...this.state.DataTable, this.props.route.params.timetable.second_period]
+                ]
             });
         }
 
@@ -120,6 +150,10 @@ export default class TimetableScreenDaySpecific extends Component {
         }
     }
 
+    setup2 = async() => {
+        this.setState({DataTable: [[this.state.first_period, this.state.second_period, this.state.third_period, this.state.fourth_period, this.state.fifth_period, this.state.sixth_period, this.state.seventh_period, this.state.eighth_period]]});
+    }
+
     render() {
         if (!this.props.route.params) {
             this.props.navigation.navigate("Home");
@@ -128,19 +162,24 @@ export default class TimetableScreenDaySpecific extends Component {
                 <View style={this.state.light_theme ? styles.containerLight : styles.container}>
                     <SafeAreaView style={styles.droidSafeArea} />
                     <View style={styles.appTitle}>
-                        <View style={styles.appIcon}>
+                        <TouchableOpacity style={styles.appIcon} onPress={async() => {
+                            this.props.navigation.navigate("Home");
+                            await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
+                        }}>
                             <Image
-                                source={require("../assets/logo.png")}
+                                source={require("../assets/backButton.png")}
                                 style={styles.iconImage}
                             ></Image>
-                        </View>
-                        <View style={styles.appTitleTextContainer}>
-                            <Text style={this.state.light_theme ? styles.appTitleTextLight : styles.appTitleText}>Timetable App</Text>
-                        </View>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.timetableContainer}>
                         <ScrollView style={this.state.light_theme ? styles.timetableLight : styles.timetable}>
+                        <Table borderStyle={{borderWidth: 1, borderColor: '#ffa1d2'}}>
+                            <Row data={this.state.HeadTable} style={styles.HeadStyle} textStyle={styles.TableText, {color: "#000"}}/>
+                            <Rows data={this.state.DataTable} textStyle={this.state.light_theme ? {color: "#000", margin: 10} : {color: "#fff", margin: 10}}/>
+                        </Table>
                             <View style={styles.periodsContainer}>
+                                {/**
                                 <Text style={this.state.light_theme ? styles.periodsTextLight : styles.periodsText}>
                                     1st Period: {this.state.first_period}{"\n"}
                                     {"\n"}
@@ -158,6 +197,7 @@ export default class TimetableScreenDaySpecific extends Component {
                                     {"\n"}
                                     8th Period: {this.state.eighth_period}
                                 </Text>
+                                **/}
                             </View>
                         </ScrollView>
                     </View>
@@ -189,8 +229,8 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     iconImage: {
-        width: "100%",
-        height: "100%",
+        width: "200%",
+        height: "200%",
         resizeMode: "contain"
     },
     appTitleTextContainer: {
@@ -230,5 +270,18 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: "black",
         paddingTop: RFValue(10)
+    },
+    HeadStyle: { 
+        height: 50,
+        alignContent: "center",
+        backgroundColor: '#ffe0f0'
+    },
+    HeadStyleLight: {
+        height: 50,
+        alignContent: "center",
+        backgroundColor: '#ffe0f0'
+    },
+    TableText: { 
+        margin: 10
     }
 });

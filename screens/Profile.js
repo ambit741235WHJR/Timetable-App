@@ -8,15 +8,18 @@ import {
   Switch,
   Platform,
   StatusBar,
+  Alert
 } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import firebase from 'firebase';
+import * as LocalAuthentication from 'expo-local-authentication';
 
 export default class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isEnabled: false,
+      isEnabled2: false,
       light_theme: true,
       profile_image: '',
       name: '',
@@ -35,16 +38,36 @@ export default class Profile extends Component {
     });
   }
 
+  async setupFingerprint(){
+    const previous_state = this.state.isEnabled2;
+    const fingerprint = !previous_state ? true : false;
+    var updates = {};
+    updates['/users/' + firebase.auth().currentUser.uid + '/fingerprint_authentication_enabled'] = fingerprint;
+    firebase.database().ref().update(updates);
+    this.setState({
+      isEnabled2: fingerprint,
+    });
+    console.log(this.state.isEnabled2);
+    if(fingerprint === true){
+      const result = await LocalAuthentication.authenticateAsync();
+      if(!result.success){
+        Alert.alert("ERROR", "Fingerprint Authentication unsuccessful", [{ text: "OK", onPress: () => this.setState({ isEnabled2: false }) }], { cancelable: false })
+      }
+    }
+  }
+
   fetchUsers = async() => {
-    let theme, name, image;
+    let theme, name, image, fingerprintEnabled;
     await firebase.database().ref('/users/' + firebase.auth().currentUser.uid).on('value', function (snapshot) {
         theme = snapshot.val().current_theme;
         name = `${snapshot.val().first_name} ${snapshot.val().last_name}`;
         image = snapshot.val().profile_picture;
+        fingerprintEnabled = snapshot.val().fingerprint_authentication_enabled;
     });
     this.setState({
       light_theme: theme === 'light' ? true : false,
       isEnabled: theme === 'light' ? false : true,
+      isEnabled2: fingerprintEnabled ? true : false,
       name: name,
       profile_image: image,
     });
@@ -86,6 +109,17 @@ export default class Profile extends Component {
                 ios_backgroundColor="#3e3e3e"
                 onValueChange={() => this.toggleSwitch()}
                 value={this.state.isEnabled}
+              />
+            </View>
+            <View style={styles.themeContainer}>
+              <Text style={this.state.light_theme ? styles.themeTextLight : styles.themeText}>Biometrics Authentication</Text>
+              <Switch
+                style={{ transform: [{ scaleX: 1.3 }, { scaleY: 1.3 }] }}
+                trackColor={{ false: '#767577', true: 'white' }}
+                thumbColor={this.state.isEnabled2 ? '#ee8249' : '#f4f3f4'}
+                ios_backgroundColor="#3e3e3e"
+                onValueChange={() => this.setupFingerprint()}
+                value={this.state.isEnabled2}
               />
             </View>
             <View style={{ flex: 0.3 }} />
