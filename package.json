@@ -8,7 +8,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "build": "expo build:web"
+    "build": "expo build:android"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
