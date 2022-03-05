@@ -6,7 +6,7 @@
 # Timetable App
 Welcome to the Github Page of Timetale App. Here, you will find the Source Code, Current Development Status and Changes of this App.
 
-**ANNOUNCEMENT: We have started publishing the Development Source Code. These Source Codes are in Development Phase and may break some features. This Development Source Code will be released in the new Branch so you can always contribute to Development Features. Current changes in Development Phase of this App will be updated in a new File called CHANGES.md which will always be there in only the Development Branch of Github.**
+**ANNOUNCEMENT: We have started publishing the Development Source Code (also on Heroku, as on 05/03/2022). These Source Codes are in Development Phase and may break some features. This Development Source Code will be released in the new Branch so you can always contribute to Development Features. Current changes in Development Phase of this App will be updated in a new File called CHANGES.md which will always be there in only the Development Branch of Github.**
 
 ## **How to work on this App:-**
 
