@@ -7,7 +7,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "build": "expo build:web"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -61,7 +62,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "electron": "^16.0.5"
+    "@expo/webpack-config": "^0.16.18",
+    "electron": "^16.0.5",
+    "expo-cli": "^5.2.0"
   },
   "private": true,
   "peerDependencies": {
