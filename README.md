@@ -1,12 +1,11 @@
-[![Changes](https://img.shields.io/badge/Commits-31-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
-[![Development Status](https://img.shields.io/badge/Development%20Status-Complete-brightgreen)](https://github.com/ambit741235/Timetable-App#current-development-status-)
-[![Install Packages of this App](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml/badge.svg)](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml)
-[![App Version](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&prefix=v&query=expo.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fambit741235%2FTimetable-App%2Fmain%2Fapp.json)](https://github.com/ambit741235/Timetable-App/releases)
+[![Changes](https://img.shields.io/badge/Commits-31-brightgreen)](https://bitbucket.org/ambit741235/timetable-app/src/main/README.md)
+[![Development Status](https://img.shields.io/badge/Development%20Status-Complete-brightgreen)](https://bitbucket.org/ambit741235/timetable-app/src/main/README.md)
+[![App Version](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&prefix=v&query=expo.version&url=https%3A%2F%2Fbitbucket.org%2Fambit741235%2Ftimetable-app%2Fraw%2F5db94a99160cdd1e92c6d37ce0a5b5542e7d63a4%2Fapp.json)](https://github.com/ambit741235WHJR/Timetable-App/releases)
 
 # Timetable App
-Welcome to the Github Page of Timetale App. Here, you will find the Source Code, Current Development Status and Changes of this App.
+Welcome to the Bitbucket Page of Timetable App. Here, you will find the Source Code, Current Development Status and Changes of this App.
 
-**ANNOUNCEMENT: We have started publishing the Development Source Code (also on Heroku, as on 05/03/2022). These Source Codes are in Development Phase and may break some features. This Development Source Code will be released in the new Branch so you can always contribute to Development Features. Current changes in Development Phase of this App will be updated in a new File called CHANGES.md which will always be there in only the Development Branch of Github.**
+**ANNOUNCEMENT: We have started publishing the Development Source Code (also on Bitbucket, as on 05/03/2022). These Source Codes are in Development Phase and may break some features. This Development Source Code will be released in the new Branch so you can always contribute to Development Features. Current changes in Development Phase of this App will be updated in a new File called CHANGES.md which will always be there in only the Development Branch of Github. Also, some announcements at the end of the Readme. Please go to end for new announcements.**
 
 ## **How to work on this App:-**
 
@@ -42,6 +41,7 @@ yarn add
 npm install -g expo-cli
 ```
 6. Open the Folder on any Code Editor (I recommend using VS Code).
+<br>
 7. Run and test on your Mobile using this command: expo start
     INFO: You need to be on the same network on mobile as it is on your PC/Laptop.
 
@@ -99,4 +99,7 @@ If you have downloaded using Github.com
 6. Bug Fixes.
 6. Bug Fixes and App Updated to Version 1.0.3.
 
-**If any changes required, you can feel free to create a new issue in Issues/New Issue in Github**
+**If any changes required, you can feel free to create a new issue in Issues/New Issue in Github or Issues/Create Issue in Bitbucket**
+
+## New Announcements:-
+1. 05/03/2022 - We have now started publishing our repo to the Bitbucket for more easier access. For more information, wait for further announcements as it is still in progress.
