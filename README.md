@@ -3,7 +3,7 @@
 [![App Version](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&prefix=v&query=expo.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fambit741235WHJR%2FTimetable-App%2Fdevelopment%2Fapp.json)](https://github.com/ambit741235WHJR/Timetable-App/releases)
 
 # Timetable App
-Welcome to the Bitbucket Page of Timetale App. Here, you will find the Source Code, Current Development Status and Changes of this App.
+Welcome to the Bitbucket Page of Timetable App. Here, you will find the Source Code, Current Development Status and Changes of this App.
 
 **ANNOUNCEMENT: We have started publishing the Development Source Code (also on Bitbucket, as on 05/03/2022). These Source Codes are in Development Phase and may break some features. This Development Source Code will be released in the new Branch so you can always contribute to Development Features. Current changes in Development Phase of this App will be updated in a new File called CHANGES.md which will always be there in only the Development Branch of Github.**
 
