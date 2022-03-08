@@ -12,7 +12,6 @@ pipelines:
           - npm
           - jest
         script:
-          - npm install 
           - npm ci
           - npx jest --ci
     - step:
