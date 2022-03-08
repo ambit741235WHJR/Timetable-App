@@ -7,14 +7,6 @@ definitions:
 pipelines:
   default:
     - step:
-        name: Test with Jest
-        caches:
-          - npm
-          - jest
-        script:
-          - npm ci
-          - npx jest --ci
-    - step:
         name: Deploy to Expo
         deployment: test
         caches:
