@@ -41,6 +41,7 @@ yarn add
 npm install -g expo-cli
 ```
 6. Open the Folder on any Code Editor (I recommend using VS Code).
+<br>
 7. Run and test on your Mobile using this command: expo start
     INFO: You need to be on the same network on mobile as it is on your PC/Laptop.
 
@@ -98,7 +99,7 @@ If you have downloaded using Github.com
 6. Bug Fixes.
 6. Bug Fixes and App Updated to Version 1.0.3.
 
-**If any changes required, you can feel free to create a new issue in Issues/New Issue in Github**
+**If any changes required, you can feel free to create a new issue in Issues/New Issue in Github or Issues/Create Issue in Bitbucket**
 
 ## New Announcements:-
 1. 05/03/2022 - We have now started publishing our repo to the Bitbucket for more easier access. For more information, wait for further announcements as it is still in progress.
