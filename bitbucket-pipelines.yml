@@ -1,5 +1,5 @@
 ---
-image: node:alpine
+image: node:16.14.0
 definitions:
   caches:
     npm: ~/.npm
