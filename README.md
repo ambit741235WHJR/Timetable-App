@@ -1,6 +1,6 @@
 [![Changes](https://img.shields.io/badge/Commits-31-brightgreen)](https://github.com/ambit741235/Timetable-App#changes-)
 [![Development Status](https://img.shields.io/badge/Development%20Status-Complete-brightgreen)](https://github.com/ambit741235/Timetable-App#current-development-status-)
-[![Install Packages of this App](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml/badge.svg)](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml)
+[![Install Packages of this App](https://github.com/ambit741235WHJR/Timetable-App/actions/workflows/node.js.yml/badge.svg)](https://github.com/ambit741235/Timetable-App/actions/workflows/node.js.yml)
 [![App Version](https://img.shields.io/badge/dynamic/json?color=brightgreen&label=Version&prefix=v&query=expo.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fambit741235%2FTimetable-App%2Fmain%2Fapp.json)](https://github.com/ambit741235/Timetable-App/releases)
 
 # Timetable App
