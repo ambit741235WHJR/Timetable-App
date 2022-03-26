@@ -19,8 +19,6 @@ import DropDownPicker from "react-native-dropdown-picker";
 import firebase from "firebase";
 
 import * as Notifications from 'expo-notifications';
-import Constants from 'expo-constants';
-import * as Device from 'expo-device';
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
